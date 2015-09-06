@@ -1,0 +1,34 @@
+{
+  "name": "nrk",
+  "version": "1.0.0",
+  "description": "Node.JS wrapper of various (undocumented) NRK.no (Norwegian Broadcast Corporation) APIs",
+  "main": "index.js",
+  "scripts": {
+    "hint": "eslint index.js test.js",
+    "test": "mocha -b -c --check-leaks -R tap test/",
+    "watch": "mocha -w -b -c --check-leaks -R progress test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Starefossen/node-nrk.git"
+  },
+  "keywords": [
+    "NRK",
+    "NRK.no",
+    "API",
+    "TV"
+  ],
+  "author": "Hans Kristian Flaatten <hans@starefossen.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Starefossen/node-nrk/issues"
+  },
+  "homepage": "https://github.com/Starefossen/node-nrk#readme",
+  "dependencies": {
+    "jsonist": "^1.2.0"
+  },
+  "devDependencies": {
+    "joi": "^6.6.1",
+    "mocha": "^2.3.0"
+  }
+}
