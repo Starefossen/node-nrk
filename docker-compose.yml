@@ -4,5 +4,6 @@ dev:
   volumes:
     - ".:/usr/src/app"
   command: "npm run watch"
+  env_file: .env
   environment:
     - NODE_ENV=development
