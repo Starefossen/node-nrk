@@ -16,6 +16,14 @@ build:
 
     - npm-test
 
+  after-steps:
+    - turistforeningen/slack-notifier:
+        url: $SLACK_WEBHOOK_URL
+
 deploy:
   steps:
     - turistforeningen/npm-publish
+
+  after-steps:
+    - turistforeningen/slack-notifier:
+        url: $SLACK_WEBHOOK_URL
