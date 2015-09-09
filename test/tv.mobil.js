@@ -8,6 +8,7 @@ describe('categories()', function describe() {
   it('returns list of categories', function it(done) {
     nrk.tv.mobil.categories(function categoriesCb(err, data, resp) {
       assert.ifError(err);
+      assert.equal(resp.statusCode, 200);
 
       const schema = Joi.array().items(Joi.object().keys({
         categoryId: Joi.string().example('dokumentar'),
@@ -28,6 +29,7 @@ describe('programs()', function describe() {
 
     nrk.tv.mobil.programs(null, function seriesCb(err, data, resp) {
       assert.ifError(err);
+      assert.equal(resp.statusCode, 200);
 
       const schema = Joi.array().items(Joi.object().keys({
         title: Joi.string().example('Diktaturet'),
@@ -78,6 +80,7 @@ describe('programs()', function describe() {
 
     nrk.tv.mobil.programs('mynt14000715', function seriesCb(err, data, resp) {
       assert.ifError(err);
+      assert.equal(resp.statusCode, 200);
 
       const schema = Joi.object().keys({
         title: Joi.string().example('Diktaturet'),
@@ -169,6 +172,7 @@ describe('search()', function describe() {
 
     nrk.tv.mobil.search('Side om side', function seriesCb(err, data, resp) {
       assert.ifError(err);
+      assert.equal(resp.statusCode, 200);
 
       const schema = Joi.object().keys({
         metaData: Joi.object(),

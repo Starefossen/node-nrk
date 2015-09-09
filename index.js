@@ -2,9 +2,9 @@
 
 const jsonist = require('jsonist');
 
-const nrk_tv_api   = process.env.NRK_TV_API   || 'https://tv.nrk.no';
-const nrk_ps_api   = process.env.NRK_PS_API   || 'http://v8.psapi.nrk.no';
-const nrk_tv_mobil = process.env.NRK_TV_MOBIL;
+const nrkTvApi      = process.env.NRK_TV_API   || 'https://tv.nrk.no';
+const nrkPsApi      = process.env.NRK_PS_API   || 'http://v8.psapi.nrk.no';
+const nrkTvMobilApi = process.env.NRK_TV_MOBIL;
 
 module.exports._opts = function _opts(agent) {
   if (agent === 'app') {
@@ -14,17 +14,17 @@ module.exports._opts = function _opts(agent) {
         'accept': '*/*',
         'app-version-ios': '43',
         'Accept-Language:': 'en-us',
-      }
-    };
-  } else {
-    return {
-      headers: {
-        'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25',
-        'accept': 'application/json, text/javascript, */*; q=0.01',
-        'x-requested-with': 'XMLHttpRequest',
-      }
+      },
     };
   }
+
+  return {
+    headers: {
+      'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25',
+      'accept': 'application/json, text/javascript, */*; q=0.01',
+      'x-requested-with': 'XMLHttpRequest',
+    },
+  };
 };
 
 module.exports.tv = {};
@@ -38,7 +38,7 @@ module.exports.tv.mobil = {};
  * @return Array of categories
  */
 module.exports.tv.mobil.categories = function categories(cb) {
-  const url = `${nrk_tv_mobil}/categories`;
+  const url = `${nrkTvMobilApi}/categories`;
   jsonist.get(url, module.exports._opts('app'), cb);
 };
 
@@ -54,9 +54,9 @@ module.exports.tv.mobil.programs = function programs(pid, cb) {
   let url;
 
   if (!pid) {
-    url = `${nrk_tv_mobil}/programs`;
+    url = `${nrkTvMobilApi}/programs`;
   } else {
-    url = `${nrk_tv_mobil}/programs/${pid}`;
+    url = `${nrkTvMobilApi}/programs/${pid}`;
   }
 
   jsonist.get(url, module.exports._opts('app'), cb);
@@ -71,7 +71,7 @@ module.exports.tv.mobil.programs = function programs(pid, cb) {
  * @return Array of matching programs
  */
 module.exports.tv.mobil.search = function search(str, cb) {
-  const url = `${nrk_tv_mobil}/search/${encodeURIComponent(str)}`;
+  const url = `${nrkTvMobilApi}/search/${encodeURIComponent(str)}`;
   jsonist.get(url, module.exports._opts('app'), cb);
 };
 
@@ -84,7 +84,7 @@ module.exports.tv.mobil.search = function search(str, cb) {
  * @return Array of matching programs
  */
 module.exports.tv.autocomplete = function autocomplete(str, cb) {
-  const url = `${nrk_tv_api}/autocomplete?query=${str}`;
+  const url = `${nrkTvApi}/autocomplete?query=${str}`;
   jsonist.get(url, module.exports._opts(), cb);
 };
 
@@ -101,9 +101,9 @@ module.exports.tv.programs = function programs(letter, category, cb) {
   let url;
 
   if (category) {
-    url = `${nrk_tv_api}/programmer/${category}/${letter}`;
+    url = `${nrkTvApi}/programmer/${category}/${letter}`;
   } else {
-    url = `${nrk_tv_api}/programmer/${letter}`;
+    url = `${nrkTvApi}/programmer/${letter}`;
   }
 
   jsonist.get(url, module.exports._opts(), cb);
@@ -118,7 +118,7 @@ module.exports.tv.programs = function programs(letter, category, cb) {
  * @return Object with details
  */
 module.exports.tv.program = function program(pid, cb) {
-  const url = `${nrk_ps_api}/mediaelement/${pid}`;
+  const url = `${nrkPsApi}/mediaelement/${pid}`;
   jsonist.get(url, module.exports._opts(), cb);
 };
 
@@ -131,6 +131,6 @@ module.exports.tv.program = function program(pid, cb) {
  * @return Object with details
  */
 module.exports.tv.series = function series(sid, cb) {
-  const url = `${nrk_ps_api}/series/${sid}/latestornextepisode/mediaelement`;
+  const url = `${nrkPsApi}/series/${sid}/latestornextepisode/mediaelement`;
   jsonist.get(url, module.exports._opts(), cb);
 };

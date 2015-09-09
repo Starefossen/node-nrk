@@ -10,6 +10,7 @@ describe('autocomplete()', function describe() {
 
     nrk.tv.autocomplete('Side', function autocompleteCb(err, data, resp) {
       assert.ifError(err);
+      assert.equal(resp.statusCode, 200);
 
       const schema = Joi.object().keys({
         searchTerm: Joi.string(),
@@ -63,7 +64,7 @@ describe('autocomplete()', function describe() {
           highlight: Joi.string().allow(null),
           highlights: Joi.object(),
           _explanation: Joi.string().allow(null),
-        }))
+        })),
       });
 
       Joi.validate(data, schema, done);
@@ -77,6 +78,7 @@ describe('program()', function describe() {
 
     nrk.tv.program('NNFA41014515', function programCb(err, data, resp) {
       assert.ifError(err);
+      assert.equal(resp.statusCode, 200);
 
       const schema = Joi.object().keys({
         _links: Joi.object(),
@@ -142,7 +144,8 @@ describe('series()', function describe() {
 
     nrk.tv.series('side-om-side', function seriesCb(err, data, resp) {
       assert.ifError(err);
-      // console.log(data);
+      assert.equal(resp.statusCode, 200);
+
       done();
     });
   });
