@@ -1,6 +1,6 @@
 {
   "name": "nrk",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Node.JS wrapper of various (undocumented) NRK.no (Norwegian Broadcast Corporation) APIs",
   "main": "index.js",
   "scripts": {
