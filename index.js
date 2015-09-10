@@ -63,6 +63,26 @@ module.exports.tv.mobil.programs = function programs(pid, cb) {
 };
 
 /**
+ * Get one ore more TV series
+ *
+ * @param sid - series id
+ * @param cb - callback function (err, data, res)
+ *
+ * @return Array of series
+ */
+module.exports.tv.mobil.series = function series(sid, cb) {
+  let url;
+
+  if (!sid) {
+    url = `${nrkTvMobilApi}/series`;
+  } else {
+    url = `${nrkTvMobilApi}/series/${sid}`;
+  }
+
+  jsonist.get(url, module.exports._opts('app'), cb);
+};
+
+/**
  * Search for TV programs
  *
  * @param str - string to search for

@@ -166,6 +166,56 @@ describe('programs()', function describe() {
   });
 });
 
+describe('series()', function describe() {
+  it('returns single series', function it(done) {
+    this.timeout(10000);
+
+    nrk.tv.mobil.series('solsikkesmuget-19', function seriesCb(err, data, resp) {
+      assert.ifError(err);
+      assert.equal(resp.statusCode, 200);
+
+      const schema = Joi.object().keys({
+        seriesId: Joi.string().example('solsikkesmuget-19'),
+        title: Joi.string().example('Solsikkesmuget 19'),
+        description: Joi.string(),
+        seasonIds: Joi.array().items(Joi.object().keys({
+          id: Joi.number().integer().example(35359),
+          name: Joi.string().example('Sesong 1'),
+        })),
+        imageId: Joi.string().regex(/^[a-zA-Z0-9_-]+$/),
+        category: Joi.object().keys({
+          categoryId: Joi.string().example('barn'),
+          displayValue: Joi.string().example('Barn'),
+        }),
+        programs: Joi.array().items(Joi.object().keys({
+          title: Joi.string().example('Solsikkesmuget 19'),
+          description: Joi.string(),
+          episodeNumberOrDate: Joi.string().example('24:24'),
+          programId: Joi.string().example('msui12008313'),
+          seriesId: Joi.string().example('solsikkesmuget-19'),
+          imageId: Joi.string().regex(/^[a-zA-Z0-9_-]+$/),
+          category: Joi.object().keys({
+            categoryId: Joi.string().example('barn'),
+            displayValue: Joi.string().example('Barn'),
+          }),
+          seasonId: Joi.number().integer().example(35359),
+          usageRights: Joi.object().keys({
+            availableFrom: Joi.number().integer(),
+            availableTo: Joi.number().integer(),
+            hasNoRights: Joi.boolean(),
+            geoblocked: Joi.boolean(),
+          }).allow(null),
+          legalAge: Joi.string().valid(['A', '6', '9', '12', '15', '18']),
+          duration: Joi.number().allow(null),
+          isAvailable: Joi.boolean(),
+        })),
+      });
+
+      Joi.validate(data, schema, done);
+    });
+  });
+});
+
 describe('search()', function describe() {
   it('returns matching list of programs', function it(done) {
     this.timeout(10000);
