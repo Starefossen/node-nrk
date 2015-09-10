@@ -27,7 +27,7 @@ describe('programs()', function describe() {
   it('returns list of programs', function it(done) {
     this.timeout(10000);
 
-    nrk.tv.mobil.programs(null, function seriesCb(err, data, resp) {
+    nrk.tv.mobil.programs(null, function programsCb(err, data, resp) {
       assert.ifError(err);
       assert.equal(resp.statusCode, 200);
 
@@ -78,7 +78,7 @@ describe('programs()', function describe() {
   it('returns list of programs', function it(done) {
     this.timeout(10000);
 
-    nrk.tv.mobil.programs('mynt14000715', function seriesCb(err, data, resp) {
+    nrk.tv.mobil.programs('mynt14000715', function programsCb(err, data, resp) {
       assert.ifError(err);
       assert.equal(resp.statusCode, 200);
 
@@ -220,7 +220,7 @@ describe('search()', function describe() {
   it('returns matching list of programs', function it(done) {
     this.timeout(10000);
 
-    nrk.tv.mobil.search('Side om side', function seriesCb(err, data, resp) {
+    nrk.tv.mobil.search('Side om side', function searchCb(err, data, resp) {
       assert.ifError(err);
       assert.equal(resp.statusCode, 200);
 
