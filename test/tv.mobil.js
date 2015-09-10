@@ -75,7 +75,7 @@ describe('programs()', function describe() {
     });
   });
 
-  it('returns list of programs', function it(done) {
+  it('returns single program', function it(done) {
     this.timeout(10000);
 
     nrk.tv.mobil.programs('mynt14000715', function programsCb(err, data, resp) {
