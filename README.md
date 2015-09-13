@@ -1,5 +1,11 @@
 # node-nrk
 
+[![Build status](https://img.shields.io/wercker/ci/55f5c372d78bafc5541030fa.svg "Build status")](https://app.wercker.com/project/bykey/7235be533901a41e049d3bdc727ea66b)
+[![NPM downloads](https://img.shields.io/npm/dm/nrk.svg "NPM downloads")](https://www.npmjs.com/package/nrk)
+[![NPM version](https://img.shields.io/npm/v/nrk.svg "NPM version")](https://www.npmjs.com/package/nrk)
+[![Node version](https://img.shields.io/node/v/nrk.svg "Node version")](https://www.npmjs.com/package/nrk)
+[![Dependency status](https://img.shields.io/david/Starefossen/node-nrk.svg "Dependency status")](https://david-dm.org/Starefossen/node-nrk)
+
 Node.JS wrapper for various (undocumented) API from the Norwegian Broadcast
 Corporation (NRK). Since NRK does not publicly document any of their APIs, this
 effort is by analyzing source code of various NRK.no sites, GitHub and other
