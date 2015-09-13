@@ -4,7 +4,7 @@ const assert = require('assert');
 const Joi = require('joi');
 const nrk = require('../');
 
-describe.skip('categories()', function describe() {
+describe('categories()', function describe() {
   it('returns list of categories', function it(done) {
     nrk.tv.mobil.categories(function categoriesCb(err, data, resp) {
       assert.ifError(err);
