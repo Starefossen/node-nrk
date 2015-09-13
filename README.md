@@ -1,4 +1,4 @@
-# node-nrk
+# NKR APIs for Node.JS
 
 [![Build status](https://img.shields.io/wercker/ci/55f5c372d78bafc5541030fa.svg "Build status")](https://app.wercker.com/project/bykey/7235be533901a41e049d3bdc727ea66b)
 [![NPM downloads](https://img.shields.io/npm/dm/nrk.svg "NPM downloads")](https://www.npmjs.com/package/nrk)
