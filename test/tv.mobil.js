@@ -4,6 +4,14 @@ const assert = require('assert');
 const Joi = require('joi');
 const nrk = require('../');
 
+before(function before(done) {
+  this.timeout(10000);
+
+  nrk.tv.mobil.categories(function categoriesCb() {
+    done();
+  });
+});
+
 describe('categories()', function describe() {
   it('returns list of categories', function it(done) {
     this.timeout(10000);
