@@ -6,6 +6,8 @@ const nrk = require('../');
 
 describe('categories()', function describe() {
   it('returns list of categories', function it(done) {
+    this.timeout(10000);
+
     nrk.tv.mobil.categories(function categoriesCb(err, data, resp) {
       assert.ifError(err);
       assert.equal(resp.statusCode, 200);
