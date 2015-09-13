@@ -24,6 +24,10 @@
     "url": "https://github.com/Starefossen/node-nrk/issues"
   },
   "homepage": "https://github.com/Starefossen/node-nrk#readme",
+  "engines": {
+    "node": ">=4.0.0",
+    "iojs": ">=1.0.0"
+  },
   "dependencies": {
     "jsonist": "^1.2.0"
   },
