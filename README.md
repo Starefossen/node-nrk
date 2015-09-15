@@ -9,7 +9,7 @@
 Node.JS wrapper for various (undocumented) API from the Norwegian Broadcast
 Corporation (NRK). Since NRK does not publicly document any of their APIs, this
 effort is by analyzing source code of various NRK.no sites, GitHub and other
-serarch engines, as well as analysing traffic from various NRK applications.
+search engines, as well as analyzing traffic from various NRK applications.
 
 ## Requirements
 
