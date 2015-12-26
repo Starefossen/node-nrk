@@ -94,6 +94,8 @@ describe('program()', function describe() {
           url: Joi.string(),
           duration: Joi.string(),
           carrierId: Joi.string(),
+          webVttSubtitlesUrl: Joi.string().allow(null),
+          timedTextSubtitlesUrl: Joi.string().allow(null),
         })),
         bitrateInfo: Joi.object().keys({
           startIndex: Joi.number().integer(),
