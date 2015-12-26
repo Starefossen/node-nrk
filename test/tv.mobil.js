@@ -18,13 +18,14 @@ describe('categories()', function describe() {
 
     nrk.tv.mobil.categories(function categoriesCb(err, data, resp) {
       assert.ifError(err);
+
       assert.equal(resp.statusCode, 200);
 
       const schema = Joi.array().items(Joi.object().keys({
         categoryId: Joi.string().example('dokumentar'),
         displayValue: Joi.string().example('Dokumentar'),
         availableFilters: Joi.array().items(Joi.string().valid(
-          [ 'POPULAR', 'RECOMMENDED', 'RECENT' ]
+          ['POPULAR', 'RECOMMENDED', 'RECENT']
         )),
       }));
 

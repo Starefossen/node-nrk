@@ -11,8 +11,8 @@ build:
     - npm-install
 
     - script:
-        name: eslint
-        code: npm run hint
+        name: lint
+        code: npm run lint
 
     - npm-test
 
