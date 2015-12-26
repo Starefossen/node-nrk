@@ -29,7 +29,8 @@
     "iojs": ">=1.0.0"
   },
   "dependencies": {
-    "jsonist": "^1.3.0"
+    "jsonist": "^1.3.0",
+    "semantic-release": "^4.3.5"
   },
   "devDependencies": {
     "eslint": "^1.10.3",
