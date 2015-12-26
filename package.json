@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint index.js test/",
     "test": "mocha -c --check-leaks -R tap test/",
-    "watch": "mocha -w -b -c --check-leaks -R progress test/"
+    "watch": "mocha -w -b -c --check-leaks -R progress test/",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
