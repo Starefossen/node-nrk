@@ -14,7 +14,6 @@ search engines, as well as analyzing traffic from various NRK applications.
 ## Requirements
 
 * Node.JS >= v4.0.0
-* io.js >= v1.0.0
 
 ## Install
 
