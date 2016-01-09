@@ -11,7 +11,7 @@ module.exports._opts = function _opts(agent) {
     return {
       headers: {
         'User-Agent': 'NRK%20TV/43 CFNetwork/711.5.6 Darwin/14.0.0',
-        'accept': '*/*',
+        accept: '*/*',
         'app-version-ios': '43',
         'Accept-Language:': 'en-us',
       },
@@ -25,7 +25,7 @@ module.exports._opts = function _opts(agent) {
         'AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0',
         'Mobile/10A5376e Safari/8536.25',
       ].join(' '),
-      'accept': 'application/json, text/javascript, */*; q=0.01',
+      accept: 'application/json, text/javascript, */*; q=0.01',
       'x-requested-with': 'XMLHttpRequest',
     },
   };
