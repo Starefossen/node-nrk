@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "eslint": "^1.10.3",
-    "eslint-config-airbnb": "2.1.1",
+    "eslint-config-airbnb": "^3.1.0",
     "joi": "^7.1.0",
     "mocha": "^2.3.4",
     "semantic-release": "^4.3.5"
