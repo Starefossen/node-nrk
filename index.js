@@ -13,7 +13,7 @@ module.exports._opts = function _opts(agent) {
         'User-Agent': 'NRK%20TV/43 CFNetwork/711.5.6 Darwin/14.0.0',
         accept: '*/*',
         'app-version-ios': '43',
-        'Accept-Language:': 'en-us',
+        'Accept-Language': 'en-us',
       },
     };
   }
