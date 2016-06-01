@@ -6,7 +6,7 @@ const nrkTvApi = process.env.NRK_TV_API || 'https://tv.nrk.no';
 const nrkPsApi = process.env.NRK_PS_API || 'http://v8.psapi.nrk.no';
 const nrkTvMobilApi = process.env.NRK_TV_MOBIL;
 
-module.exports._opts = function _opts(agent) {
+module.exports.headers = function headers(agent) {
   if (agent === 'app') {
     return {
       headers: {
@@ -43,7 +43,7 @@ module.exports.tv.mobil = {};
  */
 module.exports.tv.mobil.categories = function categories(cb) {
   const url = `${nrkTvMobilApi}/categories`;
-  jsonist.get(url, module.exports._opts('app'), cb);
+  jsonist.get(url, module.exports.headers('app'), cb);
 };
 
 /**
@@ -63,7 +63,7 @@ module.exports.tv.mobil.programs = function programs(pid, cb) {
     url = `${nrkTvMobilApi}/programs/${pid}`;
   }
 
-  jsonist.get(url, module.exports._opts('app'), cb);
+  jsonist.get(url, module.exports.headers('app'), cb);
 };
 
 /**
@@ -83,7 +83,7 @@ module.exports.tv.mobil.series = function series(sid, cb) {
     url = `${nrkTvMobilApi}/series/${sid}`;
   }
 
-  jsonist.get(url, module.exports._opts('app'), cb);
+  jsonist.get(url, module.exports.headers('app'), cb);
 };
 
 /**
@@ -96,7 +96,7 @@ module.exports.tv.mobil.series = function series(sid, cb) {
  */
 module.exports.tv.mobil.search = function search(str, cb) {
   const url = `${nrkTvMobilApi}/search/${encodeURIComponent(str)}`;
-  jsonist.get(url, module.exports._opts('app'), cb);
+  jsonist.get(url, module.exports.headers('app'), cb);
 };
 
 /**
@@ -109,7 +109,7 @@ module.exports.tv.mobil.search = function search(str, cb) {
  */
 module.exports.tv.autocomplete = function autocomplete(str, cb) {
   const url = `${nrkTvApi}/autocomplete?query=${str}`;
-  jsonist.get(url, module.exports._opts(), cb);
+  jsonist.get(url, module.exports.headers(), cb);
 };
 
 /**
@@ -130,7 +130,7 @@ module.exports.tv.programs = function programs(letter, category, cb) {
     url = `${nrkTvApi}/programmer/${letter}`;
   }
 
-  jsonist.get(url, module.exports._opts(), cb);
+  jsonist.get(url, module.exports.headers(), cb);
 };
 
 /**
@@ -143,7 +143,7 @@ module.exports.tv.programs = function programs(letter, category, cb) {
  */
 module.exports.tv.program = function program(pid, cb) {
   const url = `${nrkPsApi}/mediaelement/${pid}`;
-  jsonist.get(url, module.exports._opts(), cb);
+  jsonist.get(url, module.exports.headers(), cb);
 };
 
 /**
@@ -156,5 +156,5 @@ module.exports.tv.program = function program(pid, cb) {
  */
 module.exports.tv.series = function series(sid, cb) {
   const url = `${nrkPsApi}/series/${sid}/latestornextepisode/mediaelement`;
-  jsonist.get(url, module.exports._opts(), cb);
+  jsonist.get(url, module.exports.headers(), cb);
 };
