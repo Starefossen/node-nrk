@@ -3,6 +3,10 @@
   "version": null,
   "description": "Node.JS wrapper of various (undocumented) NRK.no (Norwegian Broadcast Corporation) APIs",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "test"
+  ],
   "scripts": {
     "lint": "eslint index.js test/",
     "test": "mocha -c --check-leaks -R tap test/",
