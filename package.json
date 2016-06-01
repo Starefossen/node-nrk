@@ -8,10 +8,14 @@
     "test"
   ],
   "scripts": {
-    "lint": "eslint index.js test/",
-    "test": "mocha -c --check-leaks -R tap test/",
-    "test:watch": "mocha -w -b -c --check-leaks -R progress test/",
-    "semantic-release": "semantic-release"
+    "codacy-coverage": "codacy-coverage",
+    "cover": "istanbul cover --report lcovonly ./node_modules/.bin/_mocha -- test",
+    "lint": "eslint index.js test.js",
+    "nsp": "nsp check",
+    "semantic-release": "semantic-release",
+    "test": "mocha -bc --check-leaks -R tap test",
+    "test:watch": "mocha -wbc --check-leaks -R progress test",
+    "greenkeeper-postpublish": "greenkeeper-postpublish"
   },
   "repository": {
     "type": "git",
