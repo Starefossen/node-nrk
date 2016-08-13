@@ -4,7 +4,7 @@ const jsonist = require('jsonist');
 
 const nrkTvApi = process.env.NRK_TV_API || 'https://tv.nrk.no';
 const nrkPsApi = process.env.NRK_PS_API || 'http://v8.psapi.nrk.no';
-const nrkTvMobilApi = process.env.NRK_TV_MOBIL;
+const nrkTvMobilApi = process.env.NRK_TV_MOBIL || 'https://tvapi.nrk.no/v1';
 
 module.exports.headers = function headers(agent) {
   if (agent === 'app') {
