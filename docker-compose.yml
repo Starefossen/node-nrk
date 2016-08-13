@@ -9,3 +9,6 @@ services:
     env_file: .env
     environment:
       - NODE_ENV=development
+      - NPM_CONFIG_LOGLEVEL=silent
+      - NPM_CONFIG_PROGRESS=false
+      - NPM_CONFIG_SPIN=false
