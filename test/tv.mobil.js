@@ -7,9 +7,7 @@ const nrk = require('../');
 before(function before(done) {
   this.timeout(10000);
 
-  nrk.tv.mobil.categories(function categoriesCb() {
-    done();
-  });
+  nrk.tv.mobil.categories(done);
 });
 
 describe('categories()', function describe() {
