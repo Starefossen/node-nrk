@@ -40,7 +40,7 @@
     "codacy-coverage": "^2.0.0",
     "eslint": "^2.11.0",
     "eslint-config-airbnb-base": "^3.0.1",
-    "eslint-plugin-import": "^1.8.1",
+    "eslint-plugin-import": "^1.12.0",
     "greenkeeper-postpublish": "^1.0.0",
     "istanbul": "^0.4.3",
     "joi": "^9.0.0",
