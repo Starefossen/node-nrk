@@ -45,7 +45,7 @@
     "istanbul": "^0.4.3",
     "joi": "^9.0.0",
     "mocha": "^3.0.0",
-    "nsp": "^2.4.0",
+    "nsp": "^2.6.2",
     "semantic-release": "^4.3.5"
   },
   "engines": {
