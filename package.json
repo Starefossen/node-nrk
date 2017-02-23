@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/Starefossen/node-nrk#readme",
   "dependencies": {
-    "jsonist": "^1.3.0"
+    "jsonist": "^2.0.0"
   },
   "devDependencies": {
     "codacy-coverage": "^2.0.0",
