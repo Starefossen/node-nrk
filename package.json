@@ -44,7 +44,7 @@
     "greenkeeper-postpublish": "^1.0.0",
     "istanbul": "^0.4.3",
     "joi": "^9.0.0",
-    "mocha": "^3.0.0",
+    "mocha": "^3.4.2",
     "nsp": "^2.4.0",
     "semantic-release": "^4.3.5"
   },
